@@ -6,60 +6,56 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MaximumTest {
-    Maximum maximum;
-    @Before
-    public void createObjectOf_MaximumVariableClass()
-    {
-        maximum = new Maximum();
-    }
     //Integer max
     @Test
-    public void givenThreeInteger_WhenFirstMax_ShouldReturnFirstNumber() {
-        Integer max = maximum.findMaximum(12, 6, 3);
-        Assert.assertEquals(java.util.Optional.of(12),java.util.Optional.of(max));
+    public void givenThreeInteger_WhenFirstMax_ReturnMax() {
+        Integer max = new Maximum<>(12,4,2).testMaximum();
+        Assert.assertEquals((Integer) 12,max);
     }
     @Test
-    public void givenThreeInteger_WhenSecondMax_ShouldReturnThirdNumber() {
-        Integer max = maximum.findMaximum(12, 16, 3);
-        Assert.assertEquals(java.util.Optional.of(16),java.util.Optional.of(max));
+    public void givenThreeInteger_WhenSecondMax_ReturnMax() {
+        Integer max = new Maximum<>(12,13,2).testMaximum();
+        Assert.assertEquals((Integer) 13,max);
     }
     @Test
-    public void givenThreeInteger_WhenThirdMax_ShouldReturnThirdNumber() {
-        Integer max = maximum.findMaximum(12, 6, 33);
-        Assert.assertEquals(java.util.Optional.of(33),java.util.Optional.of(max));
+    public void givenThreeInteger_WhenThirdMax_ReturnMax() {
+        Integer max = new Maximum<>(12,4,22).testMaximum();
+        Assert.assertEquals((Integer) 22,max);
     }
-    //Float max
+
+    //Double Max
     @Test
-    public void givenThreeFloatValues_WhenFirstMax_ShouldReturnFirstNumber() {
-        Double max = maximum.findMaximum(12.00, 6.00, 3.00);
-        Assert.assertEquals(java.util.Optional.of(12.00),java.util.Optional.of(max));
-    }
-    @Test
-    public void givenThreeFloatValues_WhenSecondMax_ShouldReturnThirdNumber() {
-        Double max = maximum.findMaximum(12.00, 16.00, 3.00);
-        Assert.assertEquals(java.util.Optional.of(16.00),java.util.Optional.of(max));
+    public void givenThreeDouble_WhenFirstMax_ReturnMax() {
+        Double max = new Maximum<>(12.00,4.00,2.00).testMaximum();
+        Assert.assertEquals((Double) 12.00,max);
     }
     @Test
-    public void givenThreeFloatValues_WhenThirdMax_ShouldReturnThirdNumber() {
-        Double max = maximum.findMaximum(12.00, 6.00, 33.00);
-        Assert.assertEquals(java.util.Optional.of(33.00),java.util.Optional.of(max));
+    public void givenThreeDouble_WhenSecondMax_ReturnMax() {
+        Double max = new Maximum<>(12.00,13.00,2.00).testMaximum();
+        Assert.assertEquals((Double) 13.00,max);
+    }
+    @Test
+    public void givenThreeDouble_WhenThirdMax_ReturnMax() {
+        Double max = new Maximum<>(12.00,4.00,22.00).testMaximum();
+        Assert.assertEquals((Double) 22.00,max);
     }
 
     //String max
-    @Test
-    public void givenThreeStringValues_WhenFirstMax_ShouldReturnFirstNumber() {
-        String max = maximum.findMaximum("Sweety", "Nisha", "Mani");
-        Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
-    }
-    @Test
-    public void givenThreeStringValues_WhenSecondMax_ShouldReturnThirdNumber() {
-        String max = maximum.findMaximum("Nisha", "Sweety", "Mani");
-        Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
-    }
-    @Test
-    public void givenThreeStringValues_WhenThirdMax_ShouldReturnThirdNumber() {
-        String max = maximum.findMaximum("Mani", "Nisha", "Sweety");
-        Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
-    }
 
+    //Double Max
+    @Test
+    public void givenThreeString_WhenFirstMax_ReturnMax() {
+        String  max = new Maximum<>("Sweety","Nisha","Mani").testMaximum();
+        Assert.assertEquals((String) "Sweety",max);
+    }
+    @Test
+    public void givenThreeString_WhenSecondMax_ReturnMax() {
+        String max = new Maximum<>("Mani","Sweety","Nisha").testMaximum();
+        Assert.assertEquals((String) "Sweety",max);
+    }
+    @Test
+    public void givenThreeString_WhenThirdMax_ReturnMax() {
+        String max = new Maximum<>("Nisha","Mani","Sweety").testMaximum();
+        Assert.assertEquals((String) "Sweety",max);
+    }
 }
