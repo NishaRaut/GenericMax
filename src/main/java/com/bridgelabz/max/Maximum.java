@@ -1,26 +1,21 @@
 package com.bridgelabz.max;
 
-public class Maximum<T extends Comparable<T>>{
-    T first,second,third;
+import java.util.List;
+import java.util.Optional;
 
-    public Maximum(T first, T second, T third) {
-        this.first = first;
-        this.second = second;
-        this.third = third;
+public class Maximum<T extends Comparable<T>>{
+   List<T> list;
+
+    public Maximum(List<T> list) {
+        this.list = list;
     }
     public T testMaximum(){
-        return Maximum.findMaximum(first,second,third);
+        return Maximum.findMaximum(list);
     }
 
-    public static <T extends  Comparable<T>> T findMaximum(T first, T second, T third)
+    public static <T extends  Comparable<T>> T findMaximum(List<T> list)
     {
-        T max;
-        if (first.compareTo(second) >0 && first.compareTo(third)>0)
-            max = first ;
-        else if (second.compareTo(first)>0 && second.compareTo(third)>0)
-            max = second ;
-        else
-            max= third;
-        return max;
+  Optional<T> max =list.stream().max(Comparable::compareTo);
+        return max.get();
     }
 }
