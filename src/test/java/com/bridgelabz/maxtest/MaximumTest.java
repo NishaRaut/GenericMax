@@ -31,34 +31,34 @@ public class MaximumTest {
     //Float max
     @Test
     public void givenThreeFloatValues_WhenFirstMax_ShouldReturnFirstNumber() {
-        Double max = maximum.findMaximumFloat(12.00, 6.00, 3.00);
+        Double max = maximum.findMaximum(12.00, 6.00, 3.00);
         Assert.assertEquals(java.util.Optional.of(12.00),java.util.Optional.of(max));
     }
     @Test
     public void givenThreeFloatValues_WhenSecondMax_ShouldReturnThirdNumber() {
-        Double max = maximum.findMaximumFloat(12.00, 16.00, 3.00);
+        Double max = maximum.findMaximum(12.00, 16.00, 3.00);
         Assert.assertEquals(java.util.Optional.of(16.00),java.util.Optional.of(max));
     }
     @Test
     public void givenThreeFloatValues_WhenThirdMax_ShouldReturnThirdNumber() {
-        Double max = maximum.findMaximumFloat(12.00, 6.00, 33.00);
+        Double max = maximum.findMaximum(12.00, 6.00, 33.00);
         Assert.assertEquals(java.util.Optional.of(33.00),java.util.Optional.of(max));
     }
 
     //String max
     @Test
     public void givenThreeStringValues_WhenFirstMax_ShouldReturnFirstNumber() {
-        String max = maximum.findMaximumString("Sweety", "Nisha", "Mani");
+        String max = maximum.findMaximum("Sweety", "Nisha", "Mani");
         Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
     }
     @Test
     public void givenThreeStringValues_WhenSecondMax_ShouldReturnThirdNumber() {
-        String max = maximum.findMaximumString("Nisha", "Sweety", "Mani");
+        String max = maximum.findMaximum("Nisha", "Sweety", "Mani");
         Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
     }
     @Test
     public void givenThreeStringValues_WhenThirdMax_ShouldReturnThirdNumber() {
-        String max = maximum.findMaximumString("Mani", "Nisha", "Sweety");
+        String max = maximum.findMaximum("Mani", "Nisha", "Sweety");
         Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
     }
 
