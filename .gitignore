@@ -26,9 +26,11 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
-
+/build.gradle
 ### VS Code ###
 .vscode/
 
 .gradle
 /build
+/gradlew.bat
+/settings.gradle

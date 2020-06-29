@@ -46,20 +46,20 @@ public class MaximumTest {
     }
 
     //String max
-
+    @Test
     public void givenThreeStringValues_WhenFirstMax_ShouldReturnFirstNumber() {
-        Integer max = maximum.findMaximumString(12, 6, 3);
-        Assert.assertEquals(java.util.Optional.of(12),java.util.Optional.of(max));
+        String max = maximum.findMaximumString("Sweety", "Nisha", "Mani");
+        Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
     }
     @Test
     public void givenThreeStringValues_WhenSecondMax_ShouldReturnThirdNumber() {
-        Integer max = maximum.findMaximumString(12, 16, 3);
-        Assert.assertEquals(java.util.Optional.of(16),java.util.Optional.of(max));
+        String max = maximum.findMaximumString("Nisha", "Sweety", "Mani");
+        Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
     }
     @Test
     public void givenThreeStringValues_WhenThirdMax_ShouldReturnThirdNumber() {
-        Integer max = maximum.findMaximum(12, 6, 33);
-        Assert.assertEquals(java.util.Optional.of(33),java.util.Optional.of(max));
+        String max = maximum.findMaximumString("Mani", "Nisha", "Sweety");
+        Assert.assertEquals(java.util.Optional.of("Sweety"),java.util.Optional.of(max));
     }
 
 }

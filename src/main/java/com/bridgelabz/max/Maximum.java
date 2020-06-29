@@ -23,15 +23,15 @@ public class Maximum {
             max= thirdNumber;
         return max;
     }
-    public Integer findMaximumString(Integer firstNumber, Integer secondNumber, Integer thirdNumber)
+    public String findMaximumString(String first, String second, String third)
     {
-        Integer max;
-        if (firstNumber >= secondNumber && firstNumber >= thirdNumber)
-            max = firstNumber ;
-        else if (secondNumber >= firstNumber && secondNumber >= thirdNumber)
-            max = secondNumber ;
+        String max;
+        if (first.compareTo(second) >0 && first.compareTo(third)>0)
+            max = first ;
+        else if (second.compareTo(first)>0 && second.compareTo(third)>0)
+            max = second ;
         else
-            max= thirdNumber;
+            max= third;
         return max;
     }
 }
